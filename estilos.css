@@ -6,6 +6,223 @@
 @import url("./estilos-animacoes/coracao.css");
 @import url("./estilos-animacoes/parallax.css");
 
+:root {
+  --body-bg: #ffffff;
+  --body-color: #212529;
+  --card-bg: #ffffff;
+  --card-border: #dee2e6;
+  --muted-color: #6c757d;
+  --input-bg: #ffffff;
+  --input-color: #212529;
+  --input-border: #dee2e6;
+  --section-alt-bg: #f8f9fa;
+  --modal-bg: #ffffff;
+  --modal-color: #212529;
+  --link-color: #0d6efd;
+}
+
+[data-theme="dark"] {
+  --body-bg: #121212;
+  --body-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --card-border: #333333;
+  --muted-color: #adb5bd;
+  --input-bg: #2a2a2a;
+  --input-color: #e0e0e0;
+  --input-border: #444444;
+  --section-alt-bg: #1a1a1a;
+  --modal-bg: #1e1e1e;
+  --modal-color: #e0e0e0;
+  --link-color: #a78bfa;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  color: var(--body-color) !important;
+}
+
+.card-text,
+.card-title {
+  color: var(--body-color);
+}
+
+.text-muted {
+  color: var(--muted-color) !important;
+}
+
+.form-control {
+  background-color: var(--input-bg);
+  color: var(--input-color);
+  border-color: var(--input-border);
+}
+
+.form-control:focus {
+  background-color: var(--input-bg);
+  color: var(--input-color);
+}
+
+.modal-content {
+  background-color: var(--modal-bg);
+  color: var(--modal-color);
+}
+
+.modal-body {
+  background-color: var(--modal-bg);
+  color: var(--modal-color);
+}
+
+.accordion-item,
+.accordion-button {
+  background-color: var(--card-bg);
+  color: var(--body-color);
+}
+
+/* FAQ accordion: always purple bg + white text */
+.accordion-button,
+.accordion-button.collapsed {
+  background-color: #9353FF !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #7a3cd6 !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1) !important;
+}
+
+[data-theme="dark"] .accordion-button,
+[data-theme="dark"] .accordion-button.collapsed {
+  background-color: #9353FF !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: #7a3cd6 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.6) !important;
+}
+
+/* Dark mode toggle button */
+.dark-mode-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-right: 14px;
+  transition: background-color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.dark-mode-btn:hover,
+.dark-mode-btn:focus-visible {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.6);
+  outline: none;
+}
+
+[data-theme="dark"] .dark-mode-btn {
+  background: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] #sugestoes-pesquisa {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--body-color);
+}
+
+[data-theme="dark"] .sugestao {
+  color: var(--body-color);
+}
+
+[data-theme="dark"] .sugestao:hover {
+  background-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] .sugestao-vazia {
+  color: rgba(255,255,255,0.4);
+}
+
+[data-theme="dark"] .sugestao-vazia:hover {
+  background-color: transparent;
+}
+
+[data-theme="dark"] #input-pesquisa {
+  background-color: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+[data-theme="dark"] #input-pesquisa::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+#sugestoes-pesquisa {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    z-index: 1200;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+#sugestoes-pesquisa:not(:empty) {
+    display: block;
+}
+
+.sugestao {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+
+.sugestao:hover {
+    background-color: #f0f0f0;
+}
+
+.sugestao-vazia {
+    color: #888;
+    font-style: italic;
+    cursor: default;
+}
+
+.sugestao-vazia:hover {
+    background-color: transparent;
+}
+
 .texto-menor {
     font-size: 13px;
 }
@@ -28,15 +245,18 @@
 }
 
 .container {
-    margin: 1em 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .divs-facilidades {
-    width: 325px;
+    width: 100%;
+    max-width: 325px;
 }
 
 .div-novidades {
-    width: 325px;
+    width: 100%;
+    max-width: 325px;
 }
 
 .botao-lilas {
@@ -99,9 +319,7 @@ h3 {
     font-weight: 500;
 }
 
-form {
-    display: flex;
-}
+/* search form flex is handled by Bootstrap's d-flex class */
 
 .form-check .form-check-input {
     margin: 0;
@@ -127,11 +345,13 @@ form {
 
 .card-animado {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.card.fade-in {
-    opacity: 1
+.card-animado.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -155,6 +375,35 @@ form {
     font-size: 10px;
 }
 
+#favoritos-numero {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e83e8c;
+    color: white;
+    border-radius: 50%;
+    padding: 0 25%;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+}
+
+#nav-favoritos-link {
+    color: white;
+    text-decoration: none;
+}
+
+#nav-favoritos-icone {
+    color: white;
+    position: relative;
+    margin: 0 0.5em 0 1em;
+}
+
+[data-theme="dark"] .radio-label {
+    color: var(--body-color);
+}
+
+
 .icon-preto {
     color: black;
 }
@@ -164,32 +413,12 @@ form {
     border: none;
 }
 
-#sugestoes-pesquisa {
-    position: absolute;
-    top: 100%;
-    right: 8%;
-    z-index: 10000;
-    width: 200px;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: #fff;
-    border: 1px solid black;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-.sugestao {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
-
 .accordion-button {
-    color: #9353FF;
+  /* purple bg/white text now handled globally above */
 }
 
 .accordion-button:not(.collapsed) {
-    color: black;
-    background-color: #9353FF;
+  /* handled globally above */
 }
 
 /* Prevent navbar from clipping custom select dropdown */
@@ -202,7 +431,7 @@ form {
 @media(min-width: 768px) {
 
     .div-novidades {
-        width: 696px;
+        max-width: 696px;
     }
 
 
@@ -221,4 +450,109 @@ form {
         padding: 32px;
     }
 
+}
+
+/* Skip-to-content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #9353FF;
+  color: white;
+  padding: 8px 16px;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Locale switcher */
+.locale-switcher {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.locale-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.locale-btn + .locale-btn {
+  border-left: 1px solid rgba(255,255,255,0.3);
+}
+
+.locale-btn:hover,
+.locale-btn:focus-visible {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  outline: none;
+}
+
+.locale-btn.active {
+  background: #9353FF;
+  color: white;
+}
+
+/* Responsive product images */
+@media (max-width: 576px) {
+  #produtos img,
+  .foto {
+    height: 280px;
+  }
+}
+
+/* Responsive search wrapper */
+@media (max-width: 767px) {
+  .search-wrapper {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* Mobile footer padding */
+footer p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Mobile navbar: locale switcher, icons */
+@media (max-width: 767px) {
+  .navbar-collapse .locale-switcher {
+    margin: 10px 0;
+    align-self: flex-start;
+    width: fit-content;
+  }
+
+  /* Cart and favorites icons in mobile menu — display as a flex row */
+  .navbar-collapse #nav-favoritos-link,
+  .navbar-collapse > a[href="sacola.html"] {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 0;
+    margin-top: 4px;
+  }
+
+  /* Remove horizontal margin that causes overlap in vertical menu */
+  .navbar-collapse .bi-cart2 {
+    margin: 0 0.25em 0 0;
+  }
+
+  .navbar-collapse #nav-favoritos-icone {
+    margin: 0 0.25em 0 0;
+  }
 }

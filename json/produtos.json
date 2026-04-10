@@ -10,26 +10,6 @@
           "tablet": "./assets/Tablet/produtos/camiseta.png",
           "desktop": "./assets/Desktop/produtos/camiseta.png"
         }
-      },
-      {
-        "nome": "Camiseta coração",
-        "descricao": "Multicores e tamanhos. Tecido de algodão 100% fresquinho para o verão. Modelagem unissex.",
-        "preco": "R$80,00",
-        "imagens": {
-          "mobile": "./assets/Camisetas/camiseta-coracao.jpg",
-          "tablet": "./assets/Camisetas/camiseta-coracao.jpg",
-          "desktop": "./assets/Camisetas/camiseta-coracao.jpg"
-        }
-      },
-      {
-        "nome": "Camiseta Social Savage",
-        "descricao": "Multicores e tamanhos. Tecido de algodão 100% fresquinho para o verão. Modelagem unissex.",
-        "preco": "R$70,00",
-        "imagens": {
-          "mobile": "./assets/Camisetas/camiseta-social-savage.jpg",
-          "tablet": "./assets/Camisetas/camiseta-social-savage.jpg",
-          "desktop": "./assets/Camisetas/camiseta-social-savage.jpg"
-        }
       }
     ],
     "calcas": [

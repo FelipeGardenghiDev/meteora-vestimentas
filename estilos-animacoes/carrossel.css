@@ -23,16 +23,12 @@
     color: rgba(0, 0, 0, 0.8);
 }
 
-.fade {
-    animation-name: fade;
+.slide-fade {
+    animation-name: slide-fade;
     animation-duration: 1.5s;
 }
 
-.fade:not(.show) {
-    opacity: 1;
-}
-
-@keyframes fade {
+@keyframes slide-fade {
     from {
         opacity: .4
     }

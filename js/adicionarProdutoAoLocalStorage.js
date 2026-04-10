@@ -1,14 +1,12 @@
-// Função para adicionar o produto ao localStorage
 export function adicionarProdutoAoLocalStorage(produto) {
-
-    console.log(JSON.stringify(produto))
-  // Verifica se já existe algum produto na sacola
   let sacola = JSON.parse(localStorage.getItem('sacola')) || [];
-  
-  // Adiciona o produto à sacola
-  sacola.push(produto);
-
-  // Atualiza o localStorage com a nova sacola
+  const key = produto?.imagens?.desktop || produto?.nome;
+  const existente = sacola.find(item => (item?.imagens?.desktop || item?.nome) === key);
+  if (existente) {
+    existente.quantidade = (existente.quantidade || 1) + 1;
+  } else {
+    sacola.push({ ...produto, quantidade: 1 });
+  }
   localStorage.setItem('sacola', JSON.stringify(sacola));
-  
+  document.dispatchEvent(new CustomEvent('sacola-atualizada'));
 }

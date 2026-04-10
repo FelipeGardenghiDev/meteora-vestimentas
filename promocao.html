@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <script>if(localStorage.getItem('tema')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
@@ -15,7 +16,9 @@
     <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-black navbar-dark">
+  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+
+    <nav class="navbar navbar-expand-md bg-black navbar-dark sticky-top" aria-label="Navegação principal">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <h1 class="m-0"><img class="d-block" src="./assets/logo-meteora.png" alt="Logo da loja Meteora"></h1>
@@ -25,51 +28,69 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <button class="dark-mode-btn d-md-none ms-2" aria-label="Alternar modo escuro/claro" title="Alternar modo escuro/claro">
+              <i class="bi bi-moon-fill" aria-hidden="true"></i>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lojas.html">Lojas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="novidades.html">Novidades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="promocao.html">Promoção</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sacola.html">Sacola</a>
-                    </li>
-                </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-i18n="nav-home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lojas.html" data-i18n="nav-lojas">Lojas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="novidades.html" data-i18n="nav-novidades">Novidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="promocao.html" data-i18n="nav-promocao">Promoção</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html" data-i18n="nav-faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sacola.html" data-i18n="nav-sacola">Sacola</a>
+          </li>
+        </ul>
+                <div class="locale-switcher" role="group" aria-label="Language / Idioma">
+          <button class="locale-btn" data-locale="BR" aria-label="Português - Brasil" title="Português - Brasil">BR</button>
+          <button class="locale-btn" data-locale="EUA" aria-label="English - United States" title="English - United States">US</button>
+        </div>
+        <button class="dark-mode-btn d-none d-md-flex" aria-label="Alternar modo escuro/claro" title="Alternar modo escuro/claro">
+            <i class="bi bi-moon-fill" aria-hidden="true"></i>
+          </button>
+                <div class="search-wrapper">
                 <form class="d-flex" role="search">
                     <input id="input-pesquisa" class="form-control me-2 rounded-0" type="search"
-                        placeholder="Digite o produto" aria-label="Pesquisar">
-                    <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
+                        placeholder="Digite o produto" aria-label="Pesquisar" data-i18n-placeholder="search-placeholder">
+                    <button class="btn btn-outline-light rounded-0" type="submit" data-i18n="search-btn">Buscar</button>
                 </form>
                 <div id="sugestoes-pesquisa"></div>
-                <a href="sacola.html"><i class="bi bi-cart2"></i></a>
+                </div>
+                <a href="favoritos.html" aria-label="Favoritos" id="nav-favoritos-link"><i class="bi bi-heart" id="nav-favoritos-icone" aria-hidden="true"></i></a>
+        <a href="sacola.html" aria-label="Sacola de compras"><i class="bi bi-cart2" aria-hidden="true"></i></a>
             </div>
         </div>
     </nav>
+
+  <main id="conteudo-principal">
     <section class="container-fluid text-white text-center py-5 mb-4" style="background: linear-gradient(135deg, #9353FF, #c084fc);">
-        <h2 class="display-5 fw-bold">Promoções Especiais!</h2>
-        <p class="lead fs-4">Até 50% OFF em itens selecionados</p>
-        <p>Aproveite antes que acabe o estoque!</p>
+        <h2 class="display-5 fw-bold" data-i18n="promo-titulo">Promoções Especiais!</h2>
+        <p class="lead fs-4" data-i18n="promo-sub1">Até 50% OFF em itens selecionados</p>
+        <p data-i18n="promo-sub2">Aproveite antes que acabe o estoque!</p>
     </section>
     <div class="container my-5">
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card border-0 shadow-sm h-100 position-relative">
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6">-40% OFF</span>
                     <img src="./assets/Mobile/categorias/categoria-camiseta.png" class="card-img-top" alt="Camiseta">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Camisetas Selecionadas</h5>
-                        <p class="card-text text-muted">Coleção com desconto imperdível.</p>
+                        <h5 class="card-title fw-bold" data-i18n="promo-camisetas-titulo">Camisetas Selecionadas</h5>
+                        <p class="card-text text-muted" data-i18n="promo-camisetas-desc">Coleção com desconto imperdível.</p>
                         <p class="text-decoration-line-through text-muted">R$ 149,90</p>
                         <p class="fw-bold text-danger fs-5">R$ 89,90</p>
-                        <a href="camisetas.html" class="btn btn-primary botao-lilas rounded-0 border-0">Ver Camisetas</a>
+                        <a href="camisetas.html" class="btn btn-primary botao-lilas rounded-0 border-0" data-i18n="promo-camisetas-btn">Ver Camisetas</a>
                     </div>
                 </div>
             </div>
@@ -78,11 +99,11 @@
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6">-30% OFF</span>
                     <img src="./assets/Mobile/categorias/categoria-calcados.png" class="card-img-top" alt="Calçados">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Calçados Esportivos</h5>
-                        <p class="card-text text-muted">Tênis com super desconto.</p>
+                        <h5 class="card-title fw-bold" data-i18n="promo-calcados-titulo">Calçados Esportivos</h5>
+                        <p class="card-text text-muted" data-i18n="promo-calcados-desc">Tênis com super desconto.</p>
                         <p class="text-decoration-line-through text-muted">R$ 299,90</p>
                         <p class="fw-bold text-danger fs-5">R$ 209,90</p>
-                        <a href="calcados.html" class="btn btn-primary botao-lilas rounded-0 border-0">Ver Calçados</a>
+                        <a href="calcados.html" class="btn btn-primary botao-lilas rounded-0 border-0" data-i18n="promo-calcados-btn">Ver Calçados</a>
                     </div>
                 </div>
             </div>
@@ -91,11 +112,11 @@
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6">-50% OFF</span>
                     <img src="./assets/Mobile/categorias/categoria-casacos.png" class="card-img-top" alt="Casacos">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Casacos de Inverno</h5>
-                        <p class="card-text text-muted">Liquidação de fim de temporada!</p>
+                        <h5 class="card-title fw-bold" data-i18n="promo-casacos-titulo">Casacos de Inverno</h5>
+                        <p class="card-text text-muted" data-i18n="promo-casacos-desc">Liquidação de fim de temporada!</p>
                         <p class="text-decoration-line-through text-muted">R$ 399,90</p>
                         <p class="fw-bold text-danger fs-5">R$ 199,90</p>
-                        <a href="casacos.html" class="btn btn-primary botao-lilas rounded-0 border-0">Ver Casacos</a>
+                        <a href="casacos.html" class="btn btn-primary botao-lilas rounded-0 border-0" data-i18n="promo-casacos-btn">Ver Casacos</a>
                     </div>
                 </div>
             </div>
@@ -104,11 +125,11 @@
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6">-25% OFF</span>
                     <img src="./assets/Mobile/categorias/categoria-bolsas.png" class="card-img-top" alt="Bolsas">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Bolsas Femininas</h5>
-                        <p class="card-text text-muted">Modelos exclusivos com preços especiais.</p>
+                        <h5 class="card-title fw-bold" data-i18n="promo-bolsas-titulo">Bolsas Femininas</h5>
+                        <p class="card-text text-muted" data-i18n="promo-bolsas-desc">Modelos exclusivos com preços especiais.</p>
                         <p class="text-decoration-line-through text-muted">R$ 249,90</p>
                         <p class="fw-bold text-danger fs-5">R$ 187,90</p>
-                        <a href="bolsas.html" class="btn btn-primary botao-lilas rounded-0 border-0">Ver Bolsas</a>
+                        <a href="bolsas.html" class="btn btn-primary botao-lilas rounded-0 border-0" data-i18n="promo-bolsas-btn">Ver Bolsas</a>
                     </div>
                 </div>
             </div>
@@ -117,11 +138,11 @@
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6">-35% OFF</span>
                     <img src="./assets/Mobile/categorias/categoria-calcas.png" class="card-img-top" alt="Calças">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Calças Jeans</h5>
-                        <p class="card-text text-muted">Os melhores modelos com desconto.</p>
+                        <h5 class="card-title fw-bold" data-i18n="promo-calcas-titulo">Calças Jeans</h5>
+                        <p class="card-text text-muted" data-i18n="promo-calcas-desc">Os melhores modelos com desconto.</p>
                         <p class="text-decoration-line-through text-muted">R$ 199,90</p>
                         <p class="fw-bold text-danger fs-5">R$ 129,90</p>
-                        <a href="calcas.html" class="btn btn-primary botao-lilas rounded-0 border-0">Ver Calças</a>
+                        <a href="calcas.html" class="btn btn-primary botao-lilas rounded-0 border-0" data-i18n="promo-calcas-btn">Ver Calças</a>
                     </div>
                 </div>
             </div>
@@ -130,28 +151,31 @@
                     <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6">-20% OFF</span>
                     <img src="./assets/Mobile/categorias/categoria-oculos.png" class="card-img-top" alt="Óculos">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Óculos de Sol</h5>
-                        <p class="card-text text-muted">Armações modernas por menos.</p>
+                        <h5 class="card-title fw-bold" data-i18n="promo-oculos-titulo">Óculos de Sol</h5>
+                        <p class="card-text text-muted" data-i18n="promo-oculos-desc">Armações modernas por menos.</p>
                         <p class="text-decoration-line-through text-muted">R$ 189,90</p>
                         <p class="fw-bold text-danger fs-5">R$ 151,90</p>
-                        <a href="oculos.html" class="btn btn-primary botao-lilas rounded-0 border-0">Ver Óculos</a>
+                        <a href="oculos.html" class="btn btn-primary botao-lilas rounded-0 border-0" data-i18n="promo-oculos-btn">Ver Óculos</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <section class="bg-black text-white text-center py-5">
-        <h3 class="fw-bold mb-3">Receba nossas promoções em primeira mão!</h3>
-        <p class="mb-4">Cadastre seu e-mail e não perca nenhuma oferta exclusiva.</p>
+        <h3 class="fw-bold mb-3" data-i18n="promo-newsletter-titulo">Receba nossas promoções em primeira mão!</h3>
+        <p class="mb-4" data-i18n="promo-newsletter-desc">Cadastre seu e-mail e não perca nenhuma oferta exclusiva.</p>
         <form class="d-flex justify-content-center gap-2 flex-wrap">
-            <input type="email" class="form-control rounded-0" style="max-width:320px" placeholder="Digite seu e-mail">
-            <button type="submit" class="btn botao-lilas rounded-0">Quero receber!</button>
+            <input type="email" class="form-control rounded-0" style="max-width:320px" placeholder="Digite seu e-mail" data-i18n-placeholder="promo-newsletter-placeholder">
+            <button type="submit" class="btn botao-lilas rounded-0" data-i18n="promo-newsletter-btn">Quero receber!</button>
         </form>
     </section>
+  </main>
+
+
 
     <footer class="text-center bg-black text-bg-dark">
-        <p class="card-text py-3">2025 <i class="bi bi-c-circle"></i> Desenvolvido por Felipe Gardenghi | Projeto fictício sem fins comerciais.</p>
-    </footer>
+    <p class="py-3 text-white">2025 <i class="bi bi-c-circle" aria-hidden="true"></i> <span data-i18n="footer-dev">Desenvolvido por Felipe Gardenghi | Projeto fictício sem fins comerciais.</span></p>
+</footer>
 
     <script src="scripts.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
