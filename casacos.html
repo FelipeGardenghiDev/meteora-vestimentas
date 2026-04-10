@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
-    <title>Meteora</title>
+    <title>Meteora - Casacos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -14,11 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./estilos.css">
-    <link rel="stylesheet" href="./estilos-sacola.css">
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-md bg-black navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -32,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="lojas.html">Lojas</a>
@@ -48,40 +44,31 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 rounded-0" id="input-pesquisa" type="search"
+                    <input id="input-pesquisa" class="form-control me-2 rounded-0" type="search"
                         placeholder="Digite o produto" aria-label="Pesquisar">
                     <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
                 </form>
                 <div id="sugestoes-pesquisa"></div>
-                <a href="sacola.html">
-                    <i class="bi bi-cart2"></i>
-                </a>
+                <a href="sacola.html"><i class="bi bi-cart2"></i></a>
             </div>
         </div>
     </nav>
-
-    <div class="container row mx-auto">
-
-        <h2 class="container text-center my-3 my-xl-5">Carrinho de compras</h2>
-
-        <div>
-            <ul id="sacola" class="product-list"></ul>
+    <div class="parallax-banner" style="background-image: url('./assets/Desktop/banner1-desktop.png')">
+        <div class="banner-conteudo">
+            <h2>Confira os(as) casacos</h2>
         </div>
-
+    </div>
+    <h2 class="container text-center my-3 my-xl-5">Casacos</h2>
+    <div class="container row mx-auto" id="produtos" data-categoria="jaquetas">
     </div>
 
-
-
     <footer class="text-center bg-black text-bg-dark">
-        <p class="card-text py-3">2025 <i class="bi bi-c-circle"></i> Desenvolvido por Felipe Gardenghi | Projeto fictício sem fins
-            comerciais.</p>
+        <p class="card-text py-3">2025 <i class="bi bi-c-circle"></i> Desenvolvido por Felipe Gardenghi | Projeto fictício sem fins comerciais.</p>
     </footer>
 
-
-    <script src="scripts.js" type="module"></script>
+    <script src="scripts.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-md bg-black navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <h1 class="m-0"><img class="d-block" src="./assets/logo-meteora.png" alt="Logo da loja Meteora"></h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -31,41 +31,38 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <select class="form-select" aria-label="Selecione um país" id="localizacao">
-                            <option selected>Localização</option>
-                            <option value="BR">Brasil</option>
-                            <option value="EUA">EUA</option>
-                        </select>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="lojas.html">Lojas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Lojas</a>
+                        <a class="nav-link" href="novidades.html">Novidades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Novidades</a>
+                        <a class="nav-link" href="promocao.html">Promoção</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Promoção</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sacola.html">Sacola</a>
+                        <a class="nav-link" href="sacola.html">Sacola</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 rounded-0" type="search" placeholder="Digite o produto"
+                    <input id="input-pesquisa" class="form-control me-2 rounded-0" type="search" placeholder="Digite o produto"
                         aria-label="Pesquisar">
                     <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
                 </form>
-                <a href="/sacola.html">
-                    <i class="bi bi-cart2"></i>
-                </a>
+                <div id="sugestoes-pesquisa"></div>
+                <a href="sacola.html"><i class="bi bi-cart2"></i></a>
             </div>
         </div>
     </nav>
+    <div class="parallax-banner">
+        <div class="banner-conteudo">
+            <h2>Confira as camisetas</h2>
+        </div>
+    </div>
     <h2 class="container text-center my-3 my-xl-5">Camisetas</h2>
-    <div class="container row mx-auto" id="produtos">
+    <div class="container row mx-auto" id="produtos" data-categoria="camisetas">
 
 
 
@@ -76,7 +73,7 @@
 
 
     <footer class="text-center bg-black text-bg-dark">
-        <p class="card-text py-3">2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto fictício sem fins
+        <p class="card-text py-3">2025 <i class="bi bi-c-circle"></i> Desenvolvido por Felipe Gardenghi | Projeto fictício sem fins
             comerciais.</p>
     </footer>
 
