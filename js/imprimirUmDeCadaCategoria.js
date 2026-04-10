@@ -172,10 +172,8 @@ export function imprimirUmDeCadaCategoria(produtos) {
   function elementoEstaNoViewport(elemento) {
     const retangulo = elemento.getBoundingClientRect();
     return (
-      retangulo.top >= 0 &&
-      retangulo.left >= 0 &&
-      retangulo.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      retangulo.right <= (window.innerWidth || document.documentElement.clientWidth)
+      retangulo.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      retangulo.bottom > 0
     );
   }
 

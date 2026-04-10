@@ -163,10 +163,8 @@ export function imprimirCategoria(itens) {
   function elementoEstaNoViewport(elemento) {
     const r = elemento.getBoundingClientRect();
     return (
-      r.top >= 0 &&
-      r.left >= 0 &&
-      r.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      r.right <= (window.innerWidth || document.documentElement.clientWidth)
+      r.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      r.bottom > 0
     );
   }
 
